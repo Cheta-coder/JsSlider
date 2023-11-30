@@ -1,0 +1,9 @@
+section button{
+    font-size: larger;
+    font-weight: bolder;
+    display: inline-block;
+    background-color: plum;
+}
+#left{
+    margin-right: 35%;
+}
