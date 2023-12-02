@@ -18,6 +18,7 @@ let changeImg = ()=>{
 }
 let slideTime = ()=>{
     interval = setInterval(()=>{
+        console.log('hey you')
         changeImg()
     }, 3000)
 }
@@ -50,6 +51,6 @@ leftBtn.addEventListener('click',(e)=>{
 
 rightBtn.addEventListener('click',(e)=>{
     changeImg()
-    clearInterval(interval)
     e.preventDefault()
 })
+// rightBtn.addEventListener('mouseenter', clearInterval(interval))

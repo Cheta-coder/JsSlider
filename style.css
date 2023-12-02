@@ -16,3 +16,15 @@ section button{
 #right{
     margin-left:10%;
 }
+
+@media screen and (min-width: 480px){
+    .divSlide{
+        padding-left: 10%;
+    }
+    #left{
+        margin-right: 40%;
+    }
+    #right{
+        margin-left: 0%;
+    }    
+}
