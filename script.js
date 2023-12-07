@@ -9,14 +9,15 @@
 // For an automatic slide, write a setInterval code and run the function(changeImg)
 // For the left(backward) and right(forward) buttons;
 // Add eventListeners of 'click' for the forword button and run the changeImg() function
-// Add eventlisterners of 'click' for the backward button and decrement [i]
+// Add eventlisterners of 'click' for the backward button and decrement [i--]
 let i = 0;
 let j = 0;
 let images = ['IMG/Bengal 5.jpg', 'IMG/Bengal 6.jpg', 'IMG/Pink 2 Siamese.jpg', 'IMG/Siamese bicycle 3.jpg', 'IMG/Sphynx 2.jpg'];
 let interval;
 let slide = document.querySelector('img');
 let leftBtn = document.getElementById('left');
-let rightBtn = document.getElementById('right');
+let rightBtn = document.getElementById('right')
+let mousdown = false
 
 let changeImg = ()=>{
     slide.src = images[i]
@@ -30,12 +31,11 @@ let changeImg = ()=>{
 }
 let slideTime = ()=>{
     interval = setInterval(()=>{
-        console.log('hey you')
         changeImg()
     }, 3000)
 }
 changeImg()
-slideTime()
+// slideTime()
 leftBtn.addEventListener('click',(e)=>{
     // for(let j = images.length -1; j > -1; j--){
     //     // slide.src = images[j]
@@ -50,20 +50,31 @@ leftBtn.addEventListener('click',(e)=>{
     // }
     // revImg()
     let revImages = images.reverse()
-    slide.src = revImages[j]
-    if(j < revImages.length -1){
-        j++
-        console.log('i am running')
-    }else{
-        j = i;
-        console.log('i ran else')
-    }    
+    slide.src = images[i]
+    i--
+    console.log(i)
+    if(i < 0){
+        i = images.length -1
+    }
+    // if(j < i){
+    //     j--
+    //     console.log(i, j)
+    // }else{
+    //     j = i;
+    //     console.log('i ran else')
+    // }    
     e.preventDefault()
 })
-
 rightBtn.addEventListener('click',(e)=>{
     changeImg()
-    clearInterval(interval)
     e.preventDefault()
 })
-// rightBtn.addEventListener('mouseenter', clearInterval(interval))
+// if(mousdown){
+//     clearInterval(interval)
+// }
+// else{
+//     slideTime()
+// }
+// rightBtn.addEventListener('mousedown', ()=>{
+//     mousdown = true
+// })
