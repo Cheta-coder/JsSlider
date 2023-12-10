@@ -32,10 +32,10 @@ let changeImg = ()=>{
 let slideTime = ()=>{
     interval = setInterval(()=>{
         changeImg()
-    }, 3000)
+    }, 1500)
 }
 changeImg()
-// slideTime()
+slideTime()
 leftBtn.addEventListener('click',(e)=>{
     // for(let j = images.length -1; j > -1; j--){
     //     // slide.src = images[j]
@@ -51,7 +51,7 @@ leftBtn.addEventListener('click',(e)=>{
     // revImg()
     let revImages = images.reverse()
     slide.src = images[i]
-    i--
+    i++
     console.log(i)
     if(i < 0){
         i = images.length -1
@@ -69,12 +69,15 @@ rightBtn.addEventListener('click',(e)=>{
     changeImg()
     e.preventDefault()
 })
-// if(mousdown){
-//     clearInterval(interval)
-// }
-// else{
-//     slideTime()
-// }
-// rightBtn.addEventListener('mousedown', ()=>{
-//     mousdown = true
-// })
+rightBtn.addEventListener('mouseenter', (e)=>{
+    clearInterval(interval)
+})
+leftBtn.addEventListener('mouseenter', (e)=>{
+    clearInterval(interval)
+})
+rightBtn.addEventListener('mouseleave', ()=>{
+    slideTime()
+})
+leftBtn.addEventListener('mouseleave', ()=>{
+    slideTime()
+})
