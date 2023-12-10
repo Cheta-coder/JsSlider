@@ -11,7 +11,6 @@
 // Add eventListeners of 'click' for the forword button and run the changeImg() function
 // Add eventlisterners of 'click' for the backward button and decrement [i--]
 let i = 0;
-// let j = 0;
 let images = ['IMG/Bengal 5.jpg', 'IMG/Bengal 6.jpg', 'IMG/Pink 2 Siamese.jpg', 'IMG/Siamese bicycle 3.jpg', 'IMG/Sphynx 2.jpg'];
 let interval;
 let slide = document.querySelector('img');
@@ -37,36 +36,11 @@ let slideTime = ()=>{
 changeImg()
 slideTime()
 leftBtn.addEventListener('click',(e)=>{
-    // for(let j = images.length -1; j > -1; j--){
-    //     slide.src = images[j]
-    // }
     i--
     slide.src = images[i]
     if(i < 0){
         i = images.length -1
     }
-    // let revImg = ()=>{
-    //     clearInterval(interval)
-    //     if(j < images.length -1){
-    //         j--
-    //     }else{
-    //         j = images.length -1
-    //     }
-    // }
-    // revImg()
-    // let revImages = images.reverse()
-    // slide.src = images[i]
-    // i++
-    // if(i < 0){
-    //     i = images.length -1
-    // }
-    // if(j < i){
-    //     j--
-    //     console.log(i, j)
-    // }else{
-    //     j = i;
-    //     console.log('i ran else')
-    // }    
     e.preventDefault()
 })
 rightBtn.addEventListener('click',(e)=>{
