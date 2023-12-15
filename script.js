@@ -49,13 +49,16 @@ rightBtn.addEventListener('click',(e)=>{
 })
 rightBtn.addEventListener('mouseenter', (e)=>{
     clearInterval(interval)
+    e.preventDefault()
 })
 leftBtn.addEventListener('mouseenter', (e)=>{
     clearInterval(interval)
 })
 rightBtn.addEventListener('mouseleave', ()=>{
     slideTime()
+    e.preventDefault()
 })
 leftBtn.addEventListener('mouseleave', ()=>{
     slideTime()
+    e.preventDefault()
 })

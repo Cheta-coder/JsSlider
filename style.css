@@ -14,7 +14,7 @@ section button{
     margin-right: 50%;
 }
 #right{
-    margin-left:10%;
+    margin-left: 5%;
 }
 
 @media screen and (min-width: 480px){
